@@ -7,11 +7,11 @@
     <link href="img/ojo-pfp.png" rel="shortcut icon"/>
   </head>
   <body>
-    <!-- <img id="background" src="img/ojo-bckgrnd.png"/>
-    <img id="text" src="img/ojo-text.png"/> -->
+    <img id="background" src="img/ojo-bckgrnd.png"/>
+    <img id="text" src="img/ojo-text.png"/>
     <div class="timer">
         <div class="return" visibility="hidden">
-            <!-- <img id="return" src="img/ojo-return.png"/> -->
+            <img class="image" id="return-img src="img/ojo-return.png"/>
         </div>
         <p id="days"/></p>
         <p id="hours"/></p>
@@ -21,8 +21,10 @@
   </body>
 </html>
 <script>
-  var ojoReturnDate=new Date("Nov 17, 2020, 10:17:00").getTime();
-  var timer=setInterval(function(){
+    document.getElementById("return-img").style.display=="none";
+
+    var ojoReturnDate=new Date("Nov 17, 2020, 10:17:00").getTime();
+    var timer=setInterval(function(){
     var currentTime=new Date().getTime();
     var timeDiff=ojoReturnDate-currentTime;
     
@@ -48,5 +50,5 @@
     document.getElementById("minutes").innerHTML=minutes+" minutes";
     document.getElementById("seconds").innerHTML=seconds+ " seconds";
 
-  }, 1000);
+    }, 1000);
 </script>
