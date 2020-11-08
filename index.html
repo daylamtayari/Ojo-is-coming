@@ -7,21 +7,17 @@
     <link href="img/ojo-pfp.png" rel="shortcut icon"/>
   </head>
   <body>
-    <div class="background">
-      <img id="background-img" src="img/ojo-bckgrnd.png"/>
-    </div>
-    <div class="text">
-      <img id="ojo-text" src="img/ojo-text.png"/>
-    </div>
+    <!-- <img id="background" src="img/ojo-bckgrnd.png"/>
+    <img id="text" src="img/ojo-text.png"/> -->
     <div class="timer">
-      <div id="return">
-        <img id="ojo-return" src="img/ojo-return.png"/>
-      </div>
-      <div id="days"/>
-      <div id="hours"/>
-      <div id="minutes"/>
-      <div id="seconds"/>
-    </div>
+        <div class="return" visibility="hidden">
+            <!-- <img id="return" src="img/ojo-return.png"/> -->
+        </div>
+        <p id="days"/></p>
+        <p id="hours"/></p>
+        <p id="minutes"/></p>
+        <p id="seconds"/></p>
+	</div>
   </body>
 </html>
 <script>
@@ -34,23 +30,23 @@
     var days=Math.floor(timeDiff/(1000*60*60*24));
     var hours=Math.floor((timeDiff%(1000*60*60*24))/(1000*60*60));
     var minutes=Math.floor((timeDiff%(1000*60*60))/(1000*60));
-    var seconds=Math.floor((distance%(1000*60))/1000);
+    var seconds=Math.floor((timeDiff%(1000*60))/1000);
 
     //Timer completion handler:
     if(timeDiff<0){
-      clearInterval(timer);
-      document.getElementById("days").style.display=="none";
-      document.getElementById("hours").style.display=="none";
-      document.getElementById("minutes").style.display=="none";
-      document.getElementById("seconds").style.display=="none";
-      document.getElementById("return").style.display=="inline";
+        clearInterval(timer);
+        document.getElementById("days").style.display=="none";
+        document.getElementById("hours").style.display=="none";
+        document.getElementById("minutes").style.display=="none";
+        document.getElementById("seconds").style.display=="none";
+        document.getElementById("return").style.display=="inline";
     }
 
     //Relay to corresponding div:
     document.getElementById("days").innerHTML=days+" days";
     document.getElementById("hours").innerHTML=hours+" hours";
     document.getElementById("minutes").innerHTML=minutes+" minutes";
-    document.getElementById("seconds").innerHTML=seconds+ "seconds";
+    document.getElementById("seconds").innerHTML=seconds+ " seconds";
 
   }, 1000);
 </script>
