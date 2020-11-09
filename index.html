@@ -11,18 +11,13 @@
     <img id="text" src="img/ojo-text.png"/>
     <div class="timer">
         <div class="return" visibility="hidden">
-            <img class="image" id="return-img src="img/ojo-return.png"/>
+            <!-- <img class="image" id="return-img" src=img/ojo-return.png"/> -->
         </div>
-        <p id="days"/></p>
-        <p id="hours"/></p>
-        <p id="minutes"/></p>
-        <p id="seconds"/></p>
+        <p id="countdown"/>
 	</div>
   </body>
 </html>
 <script>
-    document.getElementById("return-img").style.display=="none";
-
     var ojoReturnDate=new Date("Nov 19, 2020, 10:17:00").getTime();
     var timer=setInterval(function(){
     var currentTime=new Date().getTime();
@@ -45,10 +40,6 @@
     }
 
     //Relay to corresponding div:
-    document.getElementById("days").innerHTML=days+" days";
-    document.getElementById("hours").innerHTML=hours+" hours";
-    document.getElementById("minutes").innerHTML=minutes+" minutes";
-    document.getElementById("seconds").innerHTML=seconds+ " seconds";
-
+    document.getElementById("countdown").innerHTML=days+" days "+hours+" hours "+minutes+" minutes "+seconds+" seconds";
     }, 1000);
 </script>
