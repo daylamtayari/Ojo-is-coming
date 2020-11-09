@@ -6,7 +6,7 @@ This was a simple fun mini project completed primarily for meme purposes.
 ## Developers:
 
 - Captin Turtle ([@captinturtle1](https://github.com/captinturtle1 "@captinturtle1")): Graphic design and minor coding.
-- Daylam Tayari ([@daylamtayari](htps://github.com/daylamtayari "@daylamtayari")) Code, server configuration and hosting.
+- Daylam Tayari ([@daylamtayari](https://github.com/daylamtayari "@daylamtayari")) Code, server configuration and hosting.
 
 ### Copyright notice:
 
