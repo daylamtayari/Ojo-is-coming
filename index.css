@@ -1,5 +1,5 @@
 body{
-    background-color: #330000;
+    background-color: black;
     /* overflow-y: scroll;
     overflow-x: hidden; */
     margin:0;
@@ -9,8 +9,8 @@ body{
     src: url("/fonts/WarnockPro-Bold.otf");
 }
 .timer{
-    color:red;
-    font-size: 6rem;
+    color:#ff5656;
+    font-size: 11rem;
     font-weight: 250;
     font-family: 'WarnockPro', serif;
     z-index: -1;
