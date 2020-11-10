@@ -10,10 +10,11 @@
     <img id="background" src="img/ojo-bckgrnd.png"/>
     <img id="text" src="img/ojo-text.png"/>
     <div class="timer">
-        <div class="return" visibility="hidden">
-            <!-- <img class="image" id="return-img" src=img/ojo-return.png"/> -->
+        <div class="return">
+            <img id="return-img" src="img/ojo-return.png" style="display: none;"/>
         </div>
         <p id="countdown"/>
+        <p id="countdown-mobile"/>
 	</div>
   </body>
 </html>
@@ -32,14 +33,15 @@
     //Timer completion handler:
     if(timeDiff<0){
         clearInterval(timer);
-        document.getElementById("days").style.display=="none";
-        document.getElementById("hours").style.display=="none";
-        document.getElementById("minutes").style.display=="none";
-        document.getElementById("seconds").style.display=="none";
-        document.getElementById("return").style.display=="inline";
+        document.getElementById("countdown").style.display="none";
+        document.getElementById("countdown-mobile").style.display="none";
+        document.getElementById("background").style.display="none";
+        document.getElementById("text").style.display="none";
+        document.getElementById("return-img").style.display="block";
     }
 
     //Relay to corresponding div:
-    document.getElementById("countdown").innerHTML=days+" D "+hours+" H "+minutes+" M "+seconds+" S";
+    document.getElementById("countdown").innerHTML=days+"D "+hours+"H "+minutes+"M "+seconds+"S";
+    document.getElementById("countdown-mobile").innerHTML=days+"D<br>"+hours+"H<br>"+minutes+"M<br>"+seconds+"S";
     }, 1000);
 </script>
