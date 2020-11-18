@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Ojo is coming</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="favicon.ico" rel="shortcut icon"/>
+    <link rel="stylesheet" href="index.css" />
+    <link href="favicon.ico" rel="shortcut icon" />
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = (window._paq = window._paq || []);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "https://ojoiscoming.matomo.cloud/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "1"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.src = "//cdn.matomo.cloud/ojoiscoming.matomo.cloud/matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
   </head>
   <body>
-    <img id="background" src="img/ojo-bckgrnd.png"/>
-    <img id="text" src="img/ojo-text.png"/>
+    <img id="background" src="img/ojo-bckgrnd.png" />
+    <img id="text" src="img/ojo-text.png" />
     <div class="timer">
-        <div class="return">
-            <img id="return-img" src="img/ojo-return.png" style="display: none;"/>
-        </div>
-        <p id="countdown"/>
-        <p id="countdown-mobile"/>
-	</div>
+      <div class="return">
+        <img id="return-img" src="img/ojo-return.png" style="display: none" />
+      </div>
+      <p id="countdown" />
+      <p id="countdown-mobile" />
+    </div>
   </body>
 </html>
 <script>
-    var ojoReturnDate=new Date("Nov 19, 2020, 17:17:00 GMT-0700").getTime();
-    var timer=setInterval(function(){
-    var currentTime=new Date().getTime();
-    var timeDiff=ojoReturnDate-currentTime;
-    
+  var ojoReturnDate = new Date("Nov 19, 2020, 17:17:00 GMT-0700").getTime();
+  var timer = setInterval(function () {
+    var currentTime = new Date().getTime();
+    var timeDiff = ojoReturnDate - currentTime;
+
     //Calculations:
-    var days=Math.floor(timeDiff/(1000*60*60*24));
-    var hours=Math.floor((timeDiff%(1000*60*60*24))/(1000*60*60));
-    var minutes=Math.floor((timeDiff%(1000*60*60))/(1000*60));
-    var seconds=Math.floor((timeDiff%(1000*60))/1000);
+    var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
     //Timer completion handler:
-    if(timeDiff<0){
-        clearInterval(timer);
-        document.getElementById("countdown").style.display="none";
-        document.getElementById("countdown-mobile").style.display="none";
-        document.getElementById("background").style.display="none";
-        document.getElementById("text").style.display="none";
-        document.getElementById("return-img").style.display="block";
+    if (timeDiff < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").style.display = "none";
+      document.getElementById("countdown-mobile").style.display = "none";
+      document.getElementById("background").style.display = "none";
+      document.getElementById("text").style.display = "none";
+      document.getElementById("return-img").style.display = "block";
     }
 
     //Relay to corresponding div:
-    document.getElementById("countdown").innerHTML=days+"D "+hours+"H "+minutes+"M "+seconds+"S";
-    document.getElementById("countdown-mobile").innerHTML=days+"D<br>"+hours+"H<br>"+minutes+"M<br>"+seconds+"S";
-    }, 1000);
+    document.getElementById("countdown").innerHTML =
+      days + "D " + hours + "H " + minutes + "M " + seconds + "S";
+    document.getElementById("countdown-mobile").innerHTML =
+      days + "D<br>" + hours + "H<br>" + minutes + "M<br>" + seconds + "S";
+  }, 1000);
 </script>
